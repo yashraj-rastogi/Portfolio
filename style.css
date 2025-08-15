@@ -1,0 +1,124 @@
+/*
+  style.css
+  Custom styles for Yashraj Rastogi's Portfolio
+*/
+
+/* Base body styles */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0a192f;
+    color: #ccd6f6;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #0a192f;
+}
+::-webkit-scrollbar-thumb {
+    background: #8892b0;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #64ffda;
+}
+
+/* Animation for elements fading in on scroll */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Typewriter effect */
+.typewriter h1 {
+    overflow: hidden; 
+    border-right: .15em solid #64ffda; 
+    white-space: nowrap; 
+    margin: 0 auto;
+    letter-spacing: .1em;
+    animation: 
+        typing 3.5s steps(30, end),
+        blink-caret .75s step-end infinite;
+}
+
+/* Typing animation keyframes */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+/* Blinking caret for typewriter effect */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #64ffda; }
+}
+
+/* Glassmorphism effect for cards */
+.glass-card {
+    background: rgba(10, 25, 47, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(100, 255, 218, 0.2);
+}
+
+/* Carousel styling */
+.carousel-container {
+    position: relative;
+}
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(10, 25, 47, 0.7);
+    color: #64ffda;
+    border: 1px solid #64ffda;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 10;
+}
+.carousel-button:hover {
+    background-color: #64ffda;
+    color: #0a192f;
+}
+.carousel-button.prev { left: -20px; }
+.carousel-button.next { right: -20px; }
+
+/* Active nav link style for scroll spying */
+.nav-link.active {
+    color: #64ffda;
+    text-shadow: 0 0 5px #64ffda;
+}
+
+/* Scroll to top button */
+#scrollTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #64ffda;
+    color: #0a192f;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    display: none; /* Hidden by default */
+    z-index: 1000;
+    transition: opacity 0.3s, visibility 0.3s;
+}
